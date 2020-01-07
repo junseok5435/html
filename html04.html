@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>html 4일차</title>
+</head>
+<body>
+    <!-- form 태그 -->
+    <!-- 사용자의 입력을 받는 태그들의 집합 -->
+    <!-- 입력된 사용자의 정보를 Web 서버로 전송하는 역할을 함 -->
+
+    <!-- <form></form> 태그 -->
+    <!-- 속성 -->
+    <!-- action : form 태그의 자식 태그가 저장하고 있는 데이터를 지정한 페이지로 전송 함 -->
+    <!-- method : 저장하고 있는 데이터를 전송하는 방식, get/post로 나뉨 -->
+        <!-- get : 데이터를 web사이틔 주소에 붙여서 전송 -->
+            <!-- https://search.daum.net/search?w=tot&DA=YZR&t__nil_searchbox=btn&sug=&sugo=&q=%EC%84%A4%EB%82%A0%EC%97%B0%ED%9C%B4 다음뒤에 붙은거 -->
+            <!-- post 방식보다 속도가 빠름 -->
+            <!-- 중요한 정보가 없는 데이터를 전송할 경우 사용 -->
+        <!-- post : 페이지 전체를 암호화해서 전송 -->
+            <!-- 로그인해도 뒤에 다른 주소가 안 붙음> -->
+            <!-- 주로 중요한 정보 및 개인정보를 서버로 전송 시 사용 -->
+            <!-- get 방식보다 속도가 느림 -->
+    <form action="html04-1.php" method="get">  <!-- action 안에 있는 부분으로 아래 작성한 정보를 전달 함 -->
+
+    </form>
+    <!-- <label></label> -->
+    <!-- 사용자 데이터 입력란 앞 혹은 뒤에 붙어서 해당 데이터 입력란이 무엇인지 표시하는 기능 -->
+        <!-- for 속성을 사용하면 for 속성과 연동된 데이터 입력란을 클릭한 것과 동일한 효과를 발생시킴 -->
+        <!-- for : input 태그의 id값을 입력하면 label 태그를 클릭 시 input 태그를 클릭한 것과 동일한 효과를 발생시킴 -->
+        <!-- label 태그는 한 줄에 여러가지 태그를 입력 가능함(inline 형식) -->
+        <label for="username">이름 : <input type="text" id="username"></label><br>
+
+        <label for="userpw">비밀번호 : </label>
+        <input type="password" id="userpw"><br> <!-- 두 가지 방식으로 사용 가능 -->
+
+        <label for="useremail">이메일</label>
+        <input type="email" id="useremail">
+        
+    <!-- <input> 태그 -->
+    <!-- 시작태그만 존재 -->
+    <!-- inline 태그로 한 라인에 여러가지 태그를 사용할 수 있음 띄울려면 <br> 해야됨 -->
+    <!-- 사용자의 입력을 받는 태그 -->
+    <!-- form 태그의 자식태그로 존재해야만 데이터를 서버로 전송할 수 있음 -->
+    <!-- type 속성에 따라서 사용하는 방법이 변경됨 -->
+        <!-- text : 그대로 표기됨 -->
+        <!-- password : *로 표시됨 -->
+        <!-- email : @가 들어가있는지 체크됨 -->
+        <!-- radio : 선택하는 박스를 만들어 줌-->
+    <!-- 속성 -->
+        <!-- ID : 현재 페이지 내에서 html 태그를 구분하는 유일한 값, 같은 페이지에서는 다른 값을 넣어야 됨 -->
+        <!-- placeholder : 주로 type 속성이 text일 때 사용되며 입력할 값 혹은 설명을 출력하고 사용자가 데이터 입력 시 자동으로 지워지는 글자 -->
+        <!-- value : 사용자가 입력하는 데이터를 실제 가지고 있는 속성-->
+            <!-- 미리 입력 시 사용자가 데이터를 입력하지 않아도 값이 출력됨 -->
+            <!-- 기본값은 비어 있음 -->
+        <!-- disabled : input 태그를 사용하지 못하도록 비활성화 -->
+        <!-- checked : radio, checkbox에서 사용하는 속성 -->
+            <!-- 해당 <input> 태그가 선택이 되었는지 확인하는 속성 -->
+        <!-- type : <input> 태그의 출력형식을 변경하는 태그 -->
+            <!-- 입력에 따라 checkbox, radio, text, email, button, reset, submit -->
+        <!-- input 태그는 웹브라우저의 종류에 따라서 출력되는 형태가 다르거나 안될 수도 있음 -->
+    <form>
+        <label for="name">이름 : </label>
+        <input type="text" id="name" placeholder="한글로 작성해주세요" ><br>
+        <label for="">전화번호 : </label>
+        <input type="" id="tel" value="밸류"><br>
+        <label for="">주소 :</label>
+        <input type="" input="addr" disabled><br>
+        <label for="">이메일 :</label>
+        <input type="emalil" id="email" disabled="disabled">
+
+        <br><hr><br>
+
+        <label>type : text</label>
+        <input type="text" placeholder="일반 텍스트 입력">
+        <br>
+
+        <label>type : password</label>
+        <input type="password" placeholder="비밀번호 입력">
+        <br>
+
+        <label>type : emali</label>
+        <input type="email" placeholder="이메일 주소를 입력">
+        <br>
+
+        <label>type : tel</label>
+        <input type="tel" placeholder="전화번호 입력">
+        <br>
+
+        <label>type : number</label>
+        <input type="number" placeholder="숫자만 입력">
+        <br>
+
+        <label for="">type: button</label>
+        <input type="button" value="일반 버튼"> 
+        <br>
+
+        <label>type :submit</label>
+        <input type="submit" value="확인 버튼">
+        <br>
+
+        <label>type : reset</label>
+        <input type="reset" value="취소 버튼">
+        <br>
+
+        <label>type : color</label>
+        <input type="color">
+        <br>
+
+        <label>type : date</label>
+        <input type="date">
+        <br>
+
+        <label>type : datetime-local</label>
+        <input type="datetime-local">
+        <br>
+
+        <label for="">type : chechbox</label>
+        <input type="checkbox" value="사과">사과
+        <input type="checkbox" value="바나나">바나나
+        <br> 
+
+        <label for="">type : radio</label>
+        <input type="radio" name="gender" value="남자">남자&nbsp;&nbsp; <!-- name을 넣어야 중복선택이 안되는 듯? -->
+        <input type="radio" name="gender" value="여자">여자
+        <br>
+
+        <label>type : hidden - </label>
+        <input type="hidden" value="화면에 보이지 않는 값">
+    </form>
+
+    <br><hr><br>
+    <!--type : range -->
+    <!-- 슬라이드 막대를 생성하는 input 태그 -->
+        <!-- min, max, value 속성을 사용 -->
+        <!-- step : value 의 변경값을 조절할 수 있음, 기본값 1 -->
+    <label>볼륨 조절</label>
+    <input type="range" min="0" max="10" value="5" >
+    <label>볼륨 조절2</label>
+    <input type="range" min="0" max="100" value="50" step="5">
+</body>
+</html>

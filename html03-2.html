@@ -112,7 +112,16 @@
 
     <img src="../003.jpg" alt="" usemap="#002" style="width:500px; height:500px;">
 
-
-    
+    <!-- 문제 3) 이미지 파일을 클릭했을 때 다음 홈페이지와 네이버 홈페이지로 이동하는 링크를 생성하고 그 이미지에 대한 설명을 이미지 아래에 출력하세요 -->
+    <!-- map 태그 사용해서 두 곳의 링크 위치 적용 -->
+    <!-- 이미지 아래에 그 이미지에 대한 설명글을 입력 -->
+    <map name="003">
+        <area shape="rect" coords="0,0,500,250" href="https://www.ohou.se/productions/53763/selling" alt="액자">
+        <area shape="rect" coords="0,250,500,500" href="https://www.ohou.se/productions/182018/selling" alt="거실장">
+    </map>
+    <figure>
+    <img src="../images/furniture.jpg" alt="가구" usemap=#003 style="width:500px; height:500px;">
+    <figcaption>액자와 그림</figcaption>
+    </figure>
 </body>
 </html>

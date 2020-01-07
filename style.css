@@ -1,0 +1,23 @@
+#p03 {
+    color: darkmagenta;
+}
+
+article {
+    width: 600px;
+    padding: 30px;
+    border: 5px dashed violet;
+    text-align: center;
+}
+
+#h201 {
+    color: red;
+    background-color: violet;
+}
+
+
+.h2class {
+    color: yellow;
+    background-color: yellowgreen;
+    border: 1px solid; color: rebeccapurple;
+    margin: 10px;
+}
