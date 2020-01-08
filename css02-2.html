@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 2일차 2번 파일</title>
+
+    <!-- /* font-size */
+    /* 글자의 크기를 변경하는 CSS 속성 */
+    /* 기본 단위는 px, web의 기본 글자 크기는 16px */
+    /* px, em, % 단위를 주로 쓴다 */
+        /* px : 픽셀 수를 가지고 크기를 설정(절대값, 기본 단위) */
+        /* em : 기본 단위의 배수를 가지고 크기를 설정 1em=16px, 2em=32px */
+        /* % : 기본 단위를 백분율로 표시하여 크기를 설정 */ -->
+    <style>
+        * {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .fontpx {
+            font-size: 16px;
+        }
+
+        .fontem {
+            font-size: 1em;
+        }
+
+        .font100 {
+            font-size: 100%;
+        }
+    /* font-weight */
+    /* 문자의 굵기를 설정하는 CSS 속성 */
+    /* 100 ~ 900까지의 숫자로 굵기를 표현(기본값 400) */
+    /* 미리 설정된 형태의 단어도 존재함 */
+    /* normal(기본값), bold, lighter, bolder */
+
+    
+    /* font-variant */
+    /* 영문자 작은 크기의 대문자로 설정하는 CSS 속성 */
+    /* 제목 부분에 주로 많이 사용함 */
+    /* normal, small-caps */
+
+    .accent {
+        font-variant: small-caps;
+        font-weight: bold;
+        
+    }
+
+    /* font-style */
+    /* 문자의 모양을 이텔릭체로 변경하는 설정 CSS 설정 */
+    /* normal, italic, oblique */
+    /* italic 은 폰트 자성시 기울어져 있는 폰트를 디자인하여 추가하는 것이고, oblique는 화면 표시상에 기울여지게 표시하는 것, 주로 italic 사용하면 됨 */
+    p.normal {
+        font-style: normal;
+    }
+    p.italic {
+        font-style: italic;
+    }
+    p.oblique {
+        font-style: oblique;
+    }
+
+
+    /* font */
+    /* 여러가지 font에 관련된 CSS 속성을 한 번에 적용하는 CSS 속성 */
+    /* font-style, font-variant, font-weight, font-size, font-family 등을 한 번에 적용할 수 있음 */
+    /* CSS 속성 순서대로 입력해야 함 */
+    p.font01 {
+        font: italic small-caps bold 24px/30px '궁서체';
+    }
+
+    p.font02 {
+        font-size: 24px;
+        font-style: italic;
+        font-weight: bold;
+        font-variant: small-caps;
+    }
+
+    </style>
+</head>
+<body>
+    <h3>font-size 사용</h3>
+    <p>기본 글꼴의 기본 크기</p>
+    <p class="fontpx">기본 글꼴 16px 단위로 표현</p>
+    <p class="fontex">기본 글꼴 1em 단위로 표현</p>
+    <p class="font100">기본 글꼴 100% 단위로 표현</p>
+
+    <p style="font-size: 16px;">16px 크기의 글꼴</p>
+    <p style="font-size: 1em;">1em 크기의 글꼴</p>
+    <p style="font-size: 100%;">100% 크기의 글꼴</p>
+    <p style="font-size: 24px;">24px 크기의 글꼴</p>
+    <p style="font-size: 1.5em;">1.5em 크기의 글꼴</p>
+    <p style="font-size: 150%;">150% 크기의 글꼴</p>
+    <p style="font-size: 32px;">32px 크기의 글꼴</p>
+    <p style="font-size: 2em;">2em 크기의 글꼴</p>
+    <p style="font-size: 200%;">200% 크기의 글꼴</p>
+
+    <br><hr><br>
+
+    <h3>font-weight 사용</h3>
+    <p>font-weight : 미적용(기본 값)</p>
+    <p style="font-weight: normal;">font-weight : normal</p>
+    <p style="font-weight: 400;">font-weight : 400</p>
+    <p style="font-weight: bold;">font-weight : bold</p>
+    <p style="font-weight: 700;">font-weight : 700</p>
+
+    <h3>font-variant 속성</h3>
+    <p><span class="accent">시드니(Sydney)</span>, 호주</p>
+    <p><span class="accent">리우데자네이루(Rio de Janeiro)</span>, 브라질</p>
+    <p><span class="accent">나폴리(Naples)</span>, 이탈리아</p>
+
+    <h3>font-style 속성</h3>
+    <p>font-style 을 사용하지 않은 경우</p>
+    <p class="normal">font-style : normal인 경우</p>
+    <p class="italic">font-style : italic인 경우</p>
+    <p class="oblique">font-style : oblique인 경우</p>
+    
+    <br><hr><br>
+
+    <h3>font 속성</h3>
+    <p class="font01">font 속성을 사용하여 여러가지 속성을 한 번에 적용</p>
+    <p class="font02">여러가지 font 속성을 따로 따로 적용</p>
+
+
+
+
+
+
+
+
+</body>
+</html>

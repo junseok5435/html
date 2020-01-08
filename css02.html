@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 2일차</title>
+
+    <!-- 외부 CSS 파일을 로드할 경우 html 내부 style 태그 보다 윗쪽에 입력함 -->
+    <!-- 링크로 큰 틀을 잡고 스타일로 세세하게 하는거임. 스타일에 링크와 중복되는게 있으면 링크CSS는 무시됨 -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* CSS 선택자 */
+        /* CSS 속성을 적용하기 위하여 지정한 html 태그를 정확히 선택하기 위한 구분자 */
+        
+        /* 전체 선택자 */
+        /* 해당 페이지의 모든 html 태그를 선택하는 선택자 */
+        /* *(별) 기호를 사용 */
+        /* 주로 해당페이지의 전체 스타일을 적용하기 위해서 가장 먼저 사용 됨 */
+        
+        * {
+           font-family: '궁서체'; /* 서체 변경 */ 
+           margin: 0px; /* 테두리 선 외부 공간을 0px;로 설정 */
+
+        }
+
+        /* 태그 선택자 */
+        /* html 태그명을 그대로 사용하는 선택자 */
+        /* 해당페이지의 지정한 html 태그명과 같은 모든 태그를 선택하는 선택자 */
+        /* 지정한 html 태그에 동일한 스타일을 적용하기 위해서 사용함 */
+        h2 {
+            color: blue;
+
+        }
+        P {
+            font-size: 12px;
+            font-family: '돋움';
+            margin-left: 20px;
+        }
+        /* 클래스 선택자 */
+        /* 다른 종류의 html 태그를 하나의 그룹으로 묶어서 CSS속성을 적용하는 선택자*/
+        /* 기호는 .(점) */
+        /* html 태그에 class 속성을 사용하여 그룹명을 지정함 */
+        /* html 태그명과 함께 클랙스 선택자를 사용할 수 있음 */
+        .redtext {
+            color: red;
+        }
+        /* html 태그명과 함께 클래스 선택자를 사용할 수 있음 */
+        h2.redtext {
+            margin-left: 50px;
+            font-weight: lighter;
+        }
+
+        /* id 선택자 */
+        /* 지정한 html의 id 속성값을 기준으로 html 태그를 선택하는 선택자 */
+        /* #(샾) 기호를 사용함 */
+        /* 해당 html 페이지에서 id는 유일한 값을 가지고 있기 때문에 단 하나의 태그를 선택하는 선택자 */
+        #purpletext {
+            background-color: purple;
+            color: beige; 
+        }
+
+        /* 그룹 선택자 */
+        /* 동일한 CSS 속성을 적용할때 해당 태그 선택자들을 모아서 한 번에 입력 할 때 사용하는 선택자 */
+        h1,h2,h3,.redtext,.purpletext {
+            text-align: center !important;/* 가장 중요한 속성으로 들어가서 나머지는 무시함 밑에 text-align: left; 를 무시함 */
+            /* !important 속성값 */
+            /* CSS 속성을 받아서 사용할 경우 나중에 실행되는 속성이 기존의 속성을 무시하고 실행하게 되는데 !important 속성값을 사용하게 되면 
+            기존의 속성이 무시되지 않고 나중에 실행되는 속성이 무시됨 */
+        }
+
+        div>h3{
+            color: blue;
+            text-align: left;
+        }
+        /* 직접 지정받은 윗줄에 CSS가 우선순위가 있음 div는 그냥 상속이라 후순위 */
+
+        body {
+            color: blue;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: brown;
+        }
+
+        .box {
+           border: 2px solid green;
+           width: 200px;
+           height: 100px;
+           padding: 15px; 
+        }
+        .box:hover {
+            transform: rotate(45deg); /* 모든 브라우저에서 transform이 동작한다고 보장못하기 때문에 webkit, moz 등 다 적어주는거 */
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+        }
+        /* 프리픽스프리를 다운받아서 넣으면 위같은 번거로운 작업을 안해도 된다, 하지만 로딩속도가 느려지기때문에 그냥 위에 방식으로 사용 함 */
+
+    </style>
+</head>
+<body>
+    <h1 class="redtext">블루베리에 관한 연구</h1>
+    <h2 id="purpletext">블루베리와 항산화 효능</h2>
+    <p class="redtext">블루베리는 ... 입니다.</p>
+    <h2 class="redtext">블루베리와 노화</h2>
+    <p>USDA .... 발견하였습니다.</p>
+
+    <br><hr><br>
+    <div>
+        <h3>풀이 기관과 그들의 안고, 청춘의 뿐이다. 위하여, 뭇 사랑의 가치를 설산에서 하여도 약동하다.</h3>
+    </div>
+
+    <br><hr><br>
+
+    <h1>CSS</h1>
+    <h2>웹 문서의 디자인과 내용을 분리합니다.</h2>
+    <p>웹 표준에 의한 웹 문서는 디자인과 내용이 분리되어 있습니다.</p>
+    <p>내용은 HTML을 이용해 구성하고, 디자인은 CSS를 이용해 꾸미는 것입니다.</p>
+
+    <br><hr><br>
+
+    <div class="box">Mouse Over</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

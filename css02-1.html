@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 2일차 1번 파일</title>
+
+    <!-- 외부서버에서 제공하는 폰트를 로드하여 사용하기 -->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script|Song+Myung&display=swap" rel="stylesheet" >
+    <style>
+        /* font-family */
+        /* 글꼴을 설정하는 CSS 속성 */
+        /* 자신의 컴퓨터에 설치되어 있는 글꼴명을 그대로 사용하면 됨 */
+        /* []는 글꼴의 옵션으로 사용 할 수도 안 할 수도 있다는 의미 */
+        /* 글꼴은 ,(쉼표)를 사용하여 여러 개를 동시에 사용 가능함 */
+        /* 글꼴의 순서대로 사용이 됨 */
+        /* '',""(따옴표, 쌍따옴표)를 사용하면 글꼴명에 공백문자가 들어간 것도 사용가능 */
+        * {
+            font-family: Arial, Helvetica, sans-serif; /* arial 이 없으면 helvetica 가 되고 없으면 sans-serif가 적용됨 순서대로 됨 , 여러가지이기 때문에 family 임*/
+        }
+        .ng-font {
+            /* font-family: "나눔 고딕"; 공백이 들어간 문자 */
+               font-family: 'Nanum Pen Script', cursive;
+            /* font-family: 'Song Myung', serif; */
+        }
+
+        /* font-face */
+        /* 외부 서버에서 지원하는 폰트가 아닐 경우 자신이 직접 폰트를 업로드하여 해당 폰트를 사용자가 사용하게 하는 방식 */
+        /* 폰트는 저작권이 있기 때문에 무료 폰트가 아닌 폰트를 사용하게되면 법적 문제가 발생할 수 있음 */
+        
+        @font-face {
+           font-family: 'Song Myung';
+           src: url('SongMyung-Regular.eot');
+           src: url('SongMyung-Regular.eot?#iefix') format('embedded-opentype'),
+           url('SongMyung-Regular.woff2') format('woff2'),
+           url('SongMyung-Regular.woff') format('woff');
+           font-weight: normal;
+           font-style: normal;
+        }
+
+        .w-font {
+            font-family: 'Song Myung';
+        }
+
+        p {
+            font-size: 400%;
+            text-align: center;
+        }
+
+        /* font-size */
+        /* 글자의 크기를 변경하는 CSS 속성 */
+        /* 기본 단위는 px, web의 기본 글자 크기는 16px */
+        /* px, em, % 단위를 주로 쓴다 */
+            /* px : 픽셀 수를 가지고 크기를 설정(절대값, 기본 단위) */
+            /* em : 기본 단위의 배수를 가지고 크기를 설정 1em=16px, 2em=32px */
+            /* % : 기본 단위를 백분율로 표시하여 크기를 설정 */
+    
+    </style>
+</head>
+<body>
+
+</body>
+</html>

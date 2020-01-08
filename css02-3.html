@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 2일차 3번 파일</title>
+
+    <style>
+        /* color */
+        /* 문자의 색상을 변경하는 CSS 속성 */
+        /* CSS 색상표, CSS color picker 참조 */
+        /* 색상을 지정하는 방법 */
+
+        /* 1. 미리 지정된 색상단어를 입력하는 방식(140개) */
+             /* https://www.w3schools.com/colors/colors_names.asp  */
+             /* color:red; */
+
+        /* 2. hex 코드 입력 방식 */
+            /* 색상 코드를 16진수로 표현하여 red, green, blue 순서대로 두 자리씩 총 여섯자리를 입력하는 방식 */
+            /* 색상코드는 00 ~ FF, 00이 제일 옅은 색 FF가 가장 진한 색*/
+            /* hex 코드 입력방식을 뜻하는 기호 #을 입력 */
+            /* https://www.w3schools.com/colors/colors_names.asp 에 헥스코드 나옴 */
+            /* color: #a0bbFF */
+
+        /* 3. rgb 코드 입력 방식 */
+            /* 색상코드를 10진수 숫자(0 ~ 255)를 red, green, blue 순서대로 입력하는 방식 */
+            /* rgb 입력코드를 뜻하는 rgb(0,0,0) 형태로 입력  */
+            /* https://www.w3schools.com/colors/colors_names.asp RGB 들어가서 보면 됨 */
+            /* color: rgb(130,130,130) */
+
+        /* 4. rgba 코드 입력 방식 */
+            /* rgb 코드 입력방식에서 투명도를 나타내는 alpha 값을 추가한 방식 */
+            /* alpha 값은 0.0 ~ 1.0 의 값을 가지고 있음 */
+            /* 입력 순서는 red, green, blue, alpha 순서로 입력 */
+            /* rgba 코드 입력방식을 뜻하는 rgba(0, 0, 0, 0.0) 형태로 입력 */
+            /* rgba(130,130,130,1.0) */
+
+        /* 5. hsl 코드 입력 방식 */
+            /* rgb 방식과는 다르게 색상을 색조, 채도, 명도로 구분하여 표현하는 방식 */
+            /* 색조는 0 ~ 360 까지의 숫자를 입력 */
+            /* 채도는 0 ~ 100% */
+            /* 명도는 0 ~ 100% */
+            /* 색조, 채도, 명도 순으로 입력 */
+            /* hsl 코드 입력방식을 뜻하는 hsl(0,0,0) 형태로 입력 */
+            /* https://www.w3schools.com/colors/colors_names.asp 참조 */
+
+        /* 6. hsla 코드 입력 방식 */
+            /* hsl 코드 입력방식에 투명도는 나타내는 alpha값을 추가한 방식 */
+            /* alpha 값은 0.0 ~ 1.0 까지의 값을 가짐 */
+            /* 입력 순는 색조, 채도, 명도, 투명도 순으로 입력 */
+            /* hsla 코드 입력방식을 뜻하는 hsla(0,0,0,0.0) 형태로 입력 */
+
+        /* https://www.quackit.com/css/color/tools/css_color_picker.cfm 색상 변환기 참조 */
+
+        /* color 속성에 사용한 값은 문자뿐 아니라 다른 속성에서도 사용할 수 있음 */
+        /* 색상이름, hex 코드 입력방식을 가장 많이 사용함 */
+
+        h1 {color: rgb(0,200,0);}
+        h2 {color: blue;}
+        .accent {color: #ff0000;}
+        .hsl { color: hsl(240, 70%, 30%)}
+
+        /* text-decoration */
+        /* 입력된 문자에 선을 추가하는 CSS 속성 */
+        /* none, underline(밑줄), overline(윗줄), line-throught(취소선) */
+        /* a 태그에 기본적으로 underline 속성값이 주 어져 있음, none을 줘서 없앨 수 있음 */
+
+        #div02 p { line-height: 2em;} /* 자손선택자 */
+        #div02 a { text-decoration:none; }
+        #div02 .edited { text-decoration: line-through;}
+
+        #div02 a:hover { text-decoration: underline; } /* hover 마우스를 올렸을때 */
+
+        /* text-transform */
+        /* 영문자의 모양을 대문자, 소문자로 변경할 때 사용하는 CSS 속성 */
+        /* none, capitalize(첫 글자만 대문자), uppercase(전체 대문자), lowercase(전체 소문자), full-width(전각문자)로 변경 */
+
+        #div03 .trans1 { text-transform: uppercase;}
+        #div03 .trans2 { text-transform: lowercase;}
+        #div03 .trans3 { text-transform: capitalize;}
+        #div03 .trans4 { text-transform: full-width;}
+    </style>
+
+
+</head>
+<body>
+    <div>
+        <h3>color 속성</h3>
+        <h1>세계 10대 슈퍼 푸드</h1>
+        <img src="../003.jpg" alt="">
+        <h2>마늘(Galic)</h2>
+        <p>일해백리(一害白利)는 마늘의 별명이다. 한가지 해가 있고 백가지 이로움이 있다는 뜻이다. 그 한 가지 해란, 아린 맛으로 인해 위에 부담을 준다는 것이다.</p>
+        <p>마늘 특유의 아린 맛은 <span class="accent">알리신</span>이라는 성분 때문으로, 살균 및 향균 작용을 하며 마늘에 들어 있는 아연이 피로 회복에 도움을 준다.</p>
+    </div>
+    <p>색상코드</p>
+    <h1>색상코드</h1>
+
+    <br><hr><br>
+
+    <div id="div02">
+        <h3>text-decoration 속성</h3>
+        <p>다양한 기기로 인터넷에 접속할 수 있는 요즘,</p>
+        <p><span class="edited">HTML4</span> HTML5를 공부해야 할 때 입니다.</p>
+        <p><a href="https://html.spec.whatwg.org/" target="_blank"><b>HTML5 표준 규약 살펴보기</b></a></p>
+    </div>
+
+    <div id="div03">
+        <h3>text-transform 속성</h3>
+        <ul>
+            <li class="trans1">html</li>
+            <li class="trans2">CSS</li>
+            <li class="trans3">java script</li>
+            <li class="trans4">android</li>
+        </ul>        
+    </div>
+
+</body>
+</html>
