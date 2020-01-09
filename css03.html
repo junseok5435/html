@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 3일차</title>
+
+    <style>
+        
+        /* text-shadow */
+        /* 텍스트에 그림자 효과를 출력하는 CSS 속성 */
+        /* none(기본값), 가로값 세로값 번짐값 색상값 */
+        /* 가로 및 세로 값을 양의 정수로 입력하면 왼쪽에서 오른쪽으로, 위에서 아래 방향으로 그림자가 생섬됨
+        /* 가로 및 세로 값을 음의 정수로 입력하면 오른쪽에서 왼쪽으로, 아래에서 위 방향으로 그림자가 생성됨 */
+        /* 중복으로도 사용 가능함 */
+        
+        #div01 {
+            background-color: black;
+        }
+        
+        #div01 > .shadow1 { 
+            color: orange;
+            text-shadow: 1px 1px;
+        }
+
+        #div01 > .shadow2 {
+            text-shadow: 5px 5px 3px; color: #FFFFFF; 
+        }
+
+        #div01 .shadow3 {
+            color: hsl(10,30%,100%);
+            text-shadow: 7px -1px 5px #000000;
+        }
+
+        #div01 .shadow4 {
+            background-color: gray;
+            color: #000;
+            text-shadow: 0 0 4px #ccc, 0 -5px 4px #ff3, 2px -10px 6px #fd3, -2px -15px 11px #f80, 2px -19px 18px #f20;
+        }
+
+        /* white-space */
+        /* 텍스트의 공백을 처리하는 CSS 속성 */
+        /* normal(기본값), nowrap, pre, pre-line, pre-wrap */
+        /* normal : 여러 개의 공백을 하나로 표시 */
+        /* nowrap : 여러 개의 공백을 하나로 표시, 영역 너비를 넘어갈 경우 줄바꿈을 하지않고 한 줄로 표시 */
+        /* pre : 여러 개의 공백을 그대로 표시, 영역 너비를 넘어갈 경우 줄바꿈을 하지않고 한 줄로 표시 */
+        /* pre-line : 여러 개의 공백을 하나로 표시, 영역 너비를 넘어갈 경우 줄바꿈을 함 */ 
+        /* pre-wrap : 여러 개의 공백을 그대로 표시, 영역 너비를 넘어갈 경우 줄바꿈을 함 */
+        /* #npsp; 많이 안쓰려면 white-space 쓰면 됨 */
+        #div02 p.spacea {white-space: nowrap;}
+        #div02 p.spaceb {white-space: normal;}
+        #div02 p.spacec {white-space: pre;}
+        #div02 p.spaced {white-space: pre-line;}
+        #div02 p.spacee {white-space: pre-wrap;}
+
+        /* letter-spacing */
+        /* 각 텍스트 사이의 간격을 설정하는 CSS 속성 */
+        /* word-spacing */
+        /* 각 단어 사이의 간격을 설정하는 CSS 속성 */
+        /* normal(기본값), 양의 정수 및 음의 정수 */
+
+        #div03 > .letter1 { letter-spacing: normal;}
+        #div03 > .letter2 { letter-spacing: 5px;}
+        #div03 > .word1 { word-spacing: normal;}
+        #div03 > .word2 { word-spacing: 10px;}
+
+        /* direction */
+        /* 텍스트의 출력 방향을 설정하는 CSS 속성 */
+        /* ltr(기본값) - left to right, rtl - right to left */
+
+        #div04 > .ltr { direction:ltr; }
+        #div04 > .rtl { direction:rtl; }
+
+        /* text-align */
+        /* 텍스트의 정렬 방향을 설정하는 CSS 속성 */
+        /* start, end, left, right, center, justify, match-parent */
+        /* start : direction 에 따라서 ltr 일 경우 왼쪽 정렬, rtl 일 경우 오른쪽 정렬 */
+        /* end : direction 에 따라서 ltr 일 경우 오른쪽 정렬, rtl 일 경우 왼쪽 정렬 */
+        /* justify : 양쪽 정렬 */
+        /* match-parent : 부모 태그의 정렬 형식을 상속 받아 사용 */
+
+        #div05 > .left { text-align: left;}
+        #div05 > .right {text-align: right;}
+        #div05 > .center {text-align: center;}
+        #div05 > .justify {text-align: justify;}
+    
+        /* text-jusify */
+        /* text-align 속성값을 justify로 사용했을 경우 텍스트와 단어 사이의 간격을 설정하는 CSS 속성 */
+        /* auto, none, inter-word, distribute */
+        /* inter-word : 단어 사이의 공백을 조절해 정렬 */
+        /* distribute : 인접한 글자 사이의 공백을 똑같이 맞추어 정렬 */
+
+        #div06 > .auto, #div06 > .interword, #div06 > .distribute {
+            text-align: center;
+        }
+        #div06 > .auto { 
+            text-justify: auto;
+            }
+
+        #div06 > .interword {
+            text-justify: inter-word;
+        }
+
+        #div06 > .distribute {
+            text-justify: distribute;
+        }
+
+        /* text-indent */
+        /* 텍스트 출력 시 들여쓰기를 설정하는 CSS 설정 */
+        /* 정수 입력 및 % 로 입력 */
+
+        #div07 > .indent1 {
+            text-indent: 15px;
+        }
+        #div07 > .indent2 {
+            text-indent: 5%;
+        }
+
+        /* line-height */
+        /* 줄 간격을 조절하는 CSS 속성 */
+        /* normal(기본값), 정수/백분율, 부모태그에서 상속 */
+
+        #div08 > .small { line-height: 0.7;}
+        #div08 > .big  { line-height: 200%;}
+        
+        /* text-overflow */
+        /* 공간 태그 사용 시 텍스트가 해당 영역을 벗어날 경우 화면에 출력하는 방식을 설정하는 CSS 속성 */
+        /* clip, ellipsis */
+        /* clip : 영역을 넘어갈 경우 글자를 화면에서 자름 */
+        /* ellipsis : 말 줄임표를 사용하고 화면에서 자름 */
+        /* white-space 설정이 nowrap 으로 되어 있고 overflow 설정이 hidden 일 경우에 사용할 수 있음 */
+        #div09 > .content {
+            border: 1px solid #F00;
+            width: 300px;
+            white-space: nowrap; /* 자동 줄바꿈을 없앰 */
+            overflow: hidden; /* 콘텐츠가 부모 영역을 벗어났을때, 기본은 그냥 보여준다  hidden 은 숨긴다 */
+            text-overflow: ellipsis; /* clip 하면 말줄임표가 안나옴 */
+        }
+
+        #div09 > .content:hover {
+            overflow: visible;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="div01">
+        <h3>text-shadow 속성</h3>
+        <h1 class="shadow1">HTML5</h1>
+        <h1 class="shadow2">HTML5</h1>
+        <h1 class="shadow3">HTML5</h1>
+        <h1 class="shadow4">HTML5</h1>
+    </div>
+
+<br><hr><br>
+
+    <div id="div02">
+        <h3>white-space 속성</h3>
+        <h4>white-space : nowrap</h4>
+        <p class="spacea">
+            This is some text. This is some text. This is some text.
+            This is some text. This is some text. This is some text.
+            This is some text. This is some text. This is some text.
+        <h4>white-space : normal</h4>
+        </p>
+        <p class="spaceb">
+            This is some text. This is some text. This is some text.
+            This is some text. This is some text. This is some text.
+            This is some text. This is some text. This is some text.
+        </p>
+        <h4>white-space : pre</h4>
+        <p class="spacec">
+            This is some text. This is some text. This is some text.
+            This is some text. This is some text. This is some text.
+            This is some text. This is some text. This is some text.
+        </p>
+        <h4>white-space : pre-line</h4>
+        <p class="spaced">
+            This is some text. This is some text. This is some text.
+            This is some text. This is some text. This is some text.
+            This is some text. This is some text. This is some text.
+        </p>
+        <h4>white-space : pre-wrap</h4>
+        <p class="spacee">
+            This is some text. This is some text. This is some text.
+            This is some text. This is some text. This is some text.
+            This is some text. This is some text. This is some text.
+        </p>
+    </div>
+
+    <br><hr><br>
+
+    <div id="div03">
+        <h3>letter-spacing 속성</h3>
+        <h3 class="letter1">HTML5</h3>
+        <h3 class="letter2">HTML5</h3>
+        <br><br>
+        <h3>word-spacing 속성</h3>
+        <h3 class="word1">HTML5 CSS Javascript</h3>
+        <h3 class="word2">HTML5 CSS Javascript</h3>
+    </div>
+
+    <div id="div04">
+        <h3>direction 속성</h3>
+        <p class="ltr">direction을 ltr로 설정하여 텍스트를 출력</p>
+        <input class="ltr" type="text">
+        <p class="rtl">direction을 rtl로 설정하여 텍스트를 출력</p>
+        <input class="rtl" type="text"> 
+    </div>
+
+    <br><hr><br>
+
+    <div id="div05">
+        <h3>text-align 속성</h3>
+        <p class="left">Integer elementum massa at nulla placerat varius...,</p>
+        <p class="right">Integer elementum massa at nulla placerat varius...,</p>
+        <p class="center">Integer elementum massa at nulla placerat varius...,</p>
+        <p class="justify">Integer elementum massa at nulla placerat varius...,</p>
+    </div>
+
+    <div id="div06">
+        <h3>text-justify</h3>
+        <p class="auto">피고 만천하의 지혜는 기쁘며, 그들은 작고 보라. 길지 할지라도 대고, 되는 뜨거운지라, 들어 약동하다. 이성은 가치를 웅대한 운다. 것은 아니한 가는 것이다.</p>
+        <p class="interword">피고 만천하의 지혜는 기쁘며, 그들은 작고 보라. 길지 할지라도 대고, 되는 뜨거운지라, 들어 약동하다. 이성은 가치를 웅대한 운다. 것은 아니한 가는 것이다.</p>
+        <p class="distribute">피고 만천하의 지혜는 기쁘며, 그들은 작고 보라. 길지 할지라도 대고, 되는 뜨거운지라, 들어 약동하다. 이성은 가치를 웅대한 운다. 것은 아니한 가는 것이다.</p>
+    </div>
+
+    <br><hr><br>
+
+    <div id="div07">
+        <h3>text-indent</h3>
+        <p>블루베리는 비타민 A,C,E가 풍부하고 .....</p>
+        <p class="indent1">블루베리는 비타민 A,C,E가 풍부하고 .....</p>
+        <p class="indent2">블루베리는 비타민 A,C,E가 풍부하고 .....</p>
+    </div>
+
+<br><hr><br>
+    <div id="div08">
+        <h3>line-height</h3>
+        <p>어디 얼마나 품으며, 낙원을 이것이다. 얼음에 끓는 싸인 불어 운다. 그들의 이상은 같이, 그들의 원질이 밝은 거선의 맺어, 이것이다. 새 인간의 설레는 더운지라 산야에 찾아 이 열락의 이상, 사막이다. 하여도 미인을 그들은 있으랴? 대고, 얼마나 인간은 어디 바로 봄바람이다. 원대하고, 아니한 그것을 황금시대를 생생하며, 부패뿐이다. 보이는 타오르고 가는 있는 피고, 청춘에서만 천자만홍이 쓸쓸하랴? 인생에 우는 끝까지 착목한는 그들의 위하여서.</p>
+        <p class="small">어디 얼마나 품으며, 낙원을 이것이다. 얼음에 끓는 싸인 불어 운다. 그들의 이상은 같이, 그들의 원질이 밝은 거선의 맺어, 이것이다. 새 인간의 설레는 더운지라 산야에 찾아 이 열락의 이상, 사막이다. 하여도 미인을 그들은 있으랴? 대고, 얼마나 인간은 어디 바로 봄바람이다. 원대하고, 아니한 그것을 황금시대를 생생하며, 부패뿐이다. 보이는 타오르고 가는 있는 피고, 청춘에서만 천자만홍이 쓸쓸하랴? 인생에 우는 끝까지 착목한는 그들의 위하여서.</p>
+        <p class="big">어디 얼마나 품으며, 낙원을 이것이다. 얼음에 끓는 싸인 불어 운다. 그들의 이상은 같이, 그들의 원질이 밝은 거선의 맺어, 이것이다. 새 인간의 설레는 더운지라 산야에 찾아 이 열락의 이상, 사막이다. 하여도 미인을 그들은 있으랴? 대고, 얼마나 인간은 어디 바로 봄바람이다. 원대하고, 아니한 그것을 황금시대를 생생하며, 부패뿐이다. 보이는 타오르고 가는 있는 피고, 청춘에서만 천자만홍이 쓸쓸하랴? 인생에 우는 끝까지 착목한는 그들의 위하여서.</p>
+    </div>
+
+<br><hr><br>
+
+    <div id="div09">
+        <h3>text-overflow 속성</h3>
+        <p class="content">어디 얼마나 품으며, 낙원을 이것이다. 얼음에 끓는 싸인 불어 운다. 그들의 이상은 같이, 그들의 원질이 밝은 거선의 맺어, 이것이다. 새 인간의 설레는 더운지라 산야에 찾아 이 열락의 이상, 사막이다. 하여도 미인을 그들은 있으랴? 대고, 얼마나 인간은 어디 바로 봄바람이다. 원대하고, 아니한 그것을 황금시대를 생생하며, 부패뿐이다. 보이는 타오르고 가는 있는 피고, 청춘에서만 천자만홍이 쓸쓸하랴? 인생에 우는 끝까지 착목한는 그들의 위하여서.</p>
+    </div>
+
+<br><hr><br>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

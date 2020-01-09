@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+    /* div 가로너비(width) 500px, 내부 공간(padding) 10px, 테두리선 1px solid */
+    #div01 {
+        width: 500px;
+        padding: 10px;
+        border: 2px solid #333333;
+    }
+
+
+    #div01 .quiz1 {
+        list-style-type: none;
+    }
+
+    /* #div01의 자손 태그 중 class명이 accent인 태그를 선택 */
+    /* 문자굵기를 700, 문자크기를 1.2em 으로 선택 */
+    #div01  .accent {
+        font-weight: 700;
+        font-size: 1.5em; 
+    }
+
+    #div02 .quiz2 {
+        list-style-position: inside;
+        list-style-type: none;
+        line-height: 3em;
+    }
+
+    #div02 .accent2 {
+        font-weight: bold;
+        color: #ad3000;
+        font-size: 1.2em;
+    }
+
+    .div03 {
+        background-color: black;
+        border: white solid; 
+        width: 500px;
+        height: 100px;
+        margin: 0 auto;  /* div의 공간을 중앙 정렬 */
+        text-align: center; /* text를 중앙 정렬 */
+    }
+
+    .div03 > h1 {
+        color: white;
+        text-shadow: 3px 7px 5px white; 
+    }
+
+    .div04 {
+        font-family: "맑은 고딕";
+        border: 7px solid black; 
+        width: 750px;
+        height: 300px;
+        padding: 30px;
+        text-align: left;
+        margin-left: 400px;
+        }
+
+    .div04 > h1 {
+        font-size: 17px;
+        text-align: center;
+        text-align: left;
+    }
+
+    .div04 > p {
+        font-size: 16px;
+        line-height: 25px;
+        direction: ltr;
+    }
+
+    .div04 .accent4 {
+        font-weight: bold;
+        color: red;
+    }
+
+    .div04 > .book {
+        
+        float: left; /* 이미지를 왼쪽으로 두고 텍스트를 오른쪽에 두도록 설정 */
+        width: 200px;
+        padding: 10px;
+        
+      }
+
+      #div04 a, #div04 a:visited {
+          color: black;
+      }
+
+    </style>
+</head>
+<body>
+    <div id="div01">
+        <h1>최신 웹 디자인 트렌드</h1>
+        <ul class="quiz1">
+             <li><span class="accent">반응형 웹 디자인</span> - 다양한 화면 크기에 최적화하다</li>
+             <li><span class="accent">플랫 디자인</span> - 입체에서 평면으로</li>
+             <li><span class="accent">풀스크린 배경</span> - 콘텐츠에 집중</li>
+             <li><span class="accent">원 페이지 사이트</span> - 한 페이지에 모든 내용을 담다</li>
+             <li><span class="accent">패럴랙스 스크롤링</span> - 동적인 효과로 강한 인상을!</li>
+             <li><span class="accent">웹 폰트</span> - 웹 타이포그래피를 받쳐주는 기술</li>
+        </ul>
+    </div>
+
+    <br><hr><br>
+
+    <div id="div02">
+        <h1>최신 웹 디자인 트렌드</h1>
+        <ul class="quiz2">         
+            <li><span class="accent2">반응형 웹 디자인</span> - 다양한 화면 크기에 최적화하다</li>
+            <li><span class="accent2">플랫 디자인</span> - 입체에서 평면으로</li>
+            <li><span class="accent2">풀스크린 배경</span> - 콘텐츠에 집중</li>
+            <li><span class="accent2">원 페이지 사이트</span> - 한 페이지에 모든 내용을 담다</li>
+            <li><span class="accent2">패럴랙스 스크롤링</span> - 동적인 효과로 강한 인상을!</li>
+            <li><span class="accent2">웹 폰트</span> - 웹 타이포그래피를 받쳐주는 기술</li>
+        </ul><br><hr><br>
+   
+    <container>
+        <div class="div03">
+            <h1>최신 웹 디자인 트렌드</h1>
+        </div>
+    </container>
+
+<br><hr><br>
+    <div class="">
+        <map name="001">
+            <area shape="reg" coords="0,0,300,250" href="http://www.11st.co.kr/product/SellerProductDetail.tmall?method=getSellerProductDetail&prdNo=2648801304&vkey=RLHIS0HZX24SKUXZ3933LKVUU4XMJ4&utm_term=&utm_campaign=%B4%D9%C0%BDpc_%B0%A1%B0%DD%BA%F1%B1%B3%B1%E2%BA%BB&utm_source=%B4%D9%C0%BD_PC_PCS&utm_medium=%B0%A1%B0%DD%BA%F1%B1%B3" alt="" target="_blank">
+        </map>
+    </div>
+        <div class="div04">
+            <img src="../images/book.jpg" alt="" class="book" width="300px" height="250px" usemap="#001" >        
+        <h1>웹 디자인 트렌드를 따라잡는 비법 대공개!</h1>
+        <p>그래픽 프로그램으로 웹 디자인 요소를 일일이 만들어 웹사이트를<br>제작하는 시대는 지났다. 이제 모바일, 태블릿, PC 등 멀티 디바이스에<br> 한 번에 적용할 수 있는 웹 디자인 방법을 알아야한다.<br> 바로 코딩을 이용한 웹 디자인이다.<br>
+        <span class="accent4"><br>이 책은 HTML과 CSS에 대한 기초적인 내용만 알고 있다면 누구든<br> 쉽게 코딩으로 여러 기기에 대응할 수 있는 웹 디자인을 만들 수 <br>있도록 기획되었다.</span> jQuery를 몰라도 된다. jQuery 플러그인을 가져다 <br> 사용할 수 있는 방법을 소스 한 줄 한 줄 자세하고 친절하게 설명해 <br>놓았으니까!</p>
+    </div>
+
+
+
+
+
+
+</body>
+</html>
