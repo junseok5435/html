@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 4일차 1번 파일</title>
+
+    <style>
+        body { font-family: "맑은 고딕", 돋움; }
+        
+        /* 연습문제 1 */
+        #div01 {
+            width: 500px;
+            padding: 10px;
+            border: 1px solid blue;
+            background-color: rgba(0, 0, 255, 0.2);
+        }
+
+        #div01 h1 {
+            font-size: 17px;
+        }
+
+        #div01 p {
+            font-size: 16px;
+            line-height: 25px;
+        }
+
+        /* 연습문제 2 */
+        #div02 {
+            width: 500px;
+            padding: 10px;
+            border: 1px;
+            background-color:rgba(0, 0, 255, 0.2)
+        }
+
+        #div02:hover { /* div02 띄우고 :hover 하면 자손으로 인식됨, 붙여야 됨 */
+            background: blue;
+            /* div02의 자식 태그에 color 속성이 상속되어 텍스트의 색상이 변경됨 */
+            color: white;
+        }
+
+        #div02 h1 {
+            font-size: 17px;
+        }
+
+        #div02 p {
+            font-size: 16px;
+            line-height: 25px;
+        }
+
+        /* 연습문제 3 */
+        #div03 {
+            background-image: url("./pic/001/apple2.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+            width: 600px;
+            height: 600px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            position: relative
+        }
+
+        #div03 .content {
+            position: absolute;
+            top: 300px;
+            width: 90%;
+            padding: 10px;
+        }
+
+        #div03 h1 {
+            font-size: 30px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.5);
+            margin-top: 200px;
+            
+        }
+
+        #div03 p {
+            font-size: 16px;
+            line-height: 25px;
+        }
+
+    </style>
+
+
+
+</head>
+<body>
+    <!-- 연습문제 1 -->
+    <div id="div01">
+        <h1>웹 디자인 트렌드를 따라잡는 비법 대공개</h1>
+        <p>그래픽 프로그램으로 웹 디자인 요소를 일일이 만들어 웹사이트를 제작하는 시대는 지났다. 이제 모바일, 태블릿, PC 등 멀티 디바이스에 한 번에 적용할 수 있는 웹 디자인 방법을 알아야 한다. 바로 <b>코딩을 이용한 웹 디자인</b>이다.</p>
+    </div>
+    <br><hr><br>
+
+    <!-- 연습문제 2 -->
+    <div id="div02">
+        <h1>웹 디자인 트렌드를 따라잡는 비법 대공개</h1>
+        <p>그래픽 프로그램으로 웹 디자인 요소를 일일이 만들어 웹사이트를 제작하는 시대는 지났다. 이제 모바일, 태블릿, PC 등 멀티 디바이스에 한 번에 적용할 수 있는 웹 디자인 방법을 알아야 한다. 바로 <b>코딩을 이용한 웹 디자인</b>이다.</p>
+    </div>
+    <br><hr><br>
+
+    <!-- 연습문제 3 -->
+    <div id="div03">
+        <div class="content">
+            <h1>하루 한 알의 사과는 의사를 멀리 한다</h1>
+        </div>
+    </div>
+    
+
+</body>
+</html>
