@@ -1,0 +1,103 @@
+div {
+    border: 1px solid #ccc;
+    background-color: white;
+}
+
+#container {
+    width: 960px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+#header {
+    padding: 20px;
+    margin-bottom: 20px;
+    color: rgb(0, 255 , 13);
+    text-align: center;
+    width: 95.5%;
+}
+
+
+#left-sidebar {
+    width: 20%;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    float: left;
+    height: 420px;
+    background-image: url(./001.jpg);
+    background-size: 100% 100%;
+    color: white;
+}
+
+#right-sidebar {
+    width: 20%;
+    height: 420px;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    float: right;
+    background-color: #DDDDDD;
+}
+
+
+#contents {
+    width: 42%;
+    padding: 20px;
+    margin-bottom: 20px;
+    float: left;
+    background-color: #CCCCCC;
+
+}
+
+
+#footer {
+    width: 95.5%;
+    padding: 20px;
+    clear: both;
+}
+
+
+#container2 {
+    width: 960px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+#header2 {
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#left-sidebar2 {
+    width: 20%;
+    height: 312px;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    float: left;
+    background-color: #DDDDDD;
+}
+
+#right-sidebar2 ul li {
+    list-style-type: none;
+}
+
+
+#contents2 {
+    width: 68%;
+    height: 312px;
+    padding: 20px;
+    margin-bottom: 20px;
+    float: left;
+    background-image: url(./pic/001/baseball.jpg);
+    text-align: center;
+    color: white;
+}
+
+#footer2 {
+    padding: 20px;
+    clear: both;
+    text-align: center;
+}

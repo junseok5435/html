@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 6일차 6번 파일</title>
+
+    <style>
+        /* position */
+        /* html 태그를 원하는 위치에 배치하기 위한 CSS 속성 */
+        /* static(기본값), relative, absolute, fixed */
+        /* relative, absolute, fixed 는 위치 좌표 속성 top, right, bottom, left 를 추가로 사용할 수 있음 */
+        
+        /* static : 상대 위치 좌표 사용 */
+            /* 다른 html 태그의 위치에 따라 현재 html 태그의 위치가 정해짐 */
+        /* relative : 상대 위치 좌표 사용, 위치 설정 속성 top, right, bottom, left 를 추가로 사용함 */    
+            /* 다른 html 태그의 위치에 따라 현재 html 태그의 위치가 정해짐 */
+
+        /* absolute : 절대 위치 좌표 사용, 위치 설정 속성 top, right, bottom, left 를 추가로 사용함 */
+            /* 다른 html 태그의 위치와 상관없이 0 x 0 에서 시작 */
+            /* 부모 태그의 시작 위치가 자신의 시작위치(0 x 0) 임 */
+            /* 부모 태그의 position 값이 relative 이어야 함 (공식) */
+        /* fixed : 절대 위치 좌표 사용, 위치 설정 속성 top, right, bottom, left 를 추가로 사용함 */
+            /* 다른 html 태그의 위치와 상관없이 0 x 0 에서 시작 */
+            /* body 의 0 x 0 이 시작위치 */
+        
+        /* top : html 이 그려질 기준을 지정하는 속성, 상단 기준 */
+        /* right : html 이 그려질 기준을 지정하는 속성, 우측 기준 */
+        /* bottom : html 이 그려질 기준을 지정하는 속성, 하단 기준 */
+        /* left : html 이 그려질 기준을 지정하는 속성, 왼쪽 기준 */
+            /* 따로 지정을 하지 않으면 top/left 가 기준이 됨(왼쪽 상단) */
+            /* 값을 음수로 입력 시 기준 위치는 그대로이나 방향이 달라짐 */
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+        }
+
+        .red { background-color: red; }
+        .green { background-color: green; }
+        .blue { background-color: blue; }
+
+        #div01 > .red { position: static; }
+        #div01 > .green { position: static;}
+        #div01 > .blue { position: static; }
+
+        /* relative */
+        #div02 > .red { 
+            position: relative;
+        }
+        #div02 > .green { 
+            position: relative;
+            top: 100px;
+            left: 100px;
+        }
+        #div02 > .blue {
+            position: relative;
+        }
+
+        /* absolute */
+        #div03 {
+            background-color: gray;
+            width: 500px;
+            height: 500px;
+            position: relative;
+        }
+        #div03 > .red { 
+            position: absolute; 
+            width: 300px;
+            height: 300px;
+            top: 50px;
+            left: -50px;
+        }
+        #div03 > .green {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            bottom: 50px;
+            right: 50px;
+        } 
+        #div03 > .blue {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: 10px;
+            left: 10px;
+        }
+
+        /* fixed */
+        #div04 {
+            background-color: gray;
+            width: 500px;
+            height: 500px;
+            /* position: relative; */
+        }
+        
+        #div04 .red {
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+        }
+
+        #div05 .box1{
+            float: left;
+            width: 100px;
+            background-color: #ffd800;
+            margin-right: 10px;
+            padding: 20px;
+        }
+
+        /* relative */
+        #div05 .box2 {
+            position: relative;
+            left: -50px;
+            top: 30px;
+            width: 300px;
+            background-color: #0094ff;
+            float: left;
+            padding: 20px;
+        }
+
+        #div::after {
+            clear: both;
+            display: table;
+            content: "";
+        }
+
+        /* absolute */
+        #div06 {
+            /* 자식태그가 position : absolute 이면 부모 position 은 반드시 relative 이어야 함 */
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+        }
+
+        #div06 > .box {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #0084ff;
+        }
+        #crd1 { top: 0; left: 0; }
+        #crd2 { top: 0; right: 0px; }
+        #crd3 { bottom: 0px; left: 0px; }
+        #crd4 { bottom: 0px; right: 0px; }
+        #crd5 { top: 100px; left: 100px; }
+        
+        /* position: sticky */
+        /* 기본형태는 일반 html 태그처럼 스크롤 되다가 특정 위치에 닿게 되면 그 곳에 붙어서 고정되는 형태 */
+        #div07 .sticky {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 20px;
+            padding: 5px;
+            background-color: #0084FF;
+            border: 2px solid black;
+            width: 300px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="div01">
+        <h3>position - static</h3>
+        <div class="box red"></div>
+        <div class="box green"></div>
+        <div class="box blue"></div>
+    </div>
+
+    <br><hr><br>
+
+    <div id="div02">
+        <h3>position - relative</h3>
+        <div class="box red"></div>
+        <div class="box green"></div>
+        <div class="box blue"></div>
+    </div>
+        
+    <br><br>
+
+    <div id="div03">
+        <h3>position - absolute</h3>
+        <div class="box red"></div>
+        <div class="box green"></div>
+        <div class="box blue"></div>
+    </div>
+    
+    <div id="div04">
+        <h3>position - fixed</h3>
+        <div class="box red"></div>
+        <div class="box green"></div>
+        <div class="box blue"></div>
+    </div>
+
+    <br><hr><br>
+
+    <div id="div05">
+        <h3>position - relative</h3>
+        <div class="box1">박스 1</div>
+        <div class="box2">박스 2</div>
+    </div>
+
+    <br><br><br><br><br><hr><br><br><br><br><br>
+
+    <div id="div06">
+        <div class="box" id="crd1">crd1</div>
+        <div class="box" id="crd2">crd2</div>
+        <div class="box" id="crd3">crd3</div>
+        <div class="box" id="crd4">crd4</div>
+        <div class="box" id="crd5">crd5</div>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><hr><br>
+    
+    <div id="div07">
+        <div class="sticky">
+            <p>position : sticky</p>
+            <p>스크롤 되다가 상단에 붙어요</p>
+        </div>
+        <div style="padding-bottom: 2000px">
+            <p>국가는 평생교육을 진흥하여야 한다. 누구든지 체포 또는 구속을 당한 때에는 적부의 심사를 법원에 청구할 권리를 가진다.</p>
+
+            <p>감사위원은 원장의 제청으로 대통령이 임명하고, 그 임기는 4년으로 하며, 1차에 한하여 중임할 수 있다.</p>
+                
+            <p>정당은 법률이 정하는 바에 의하여 국가의 보호를 받으며, 국가는 법률이 정하는 바에 의하여 정당운영에 필요한 자금을 보조할 수 있다.</p>
+                
+            <p>모든 국민은 종교의 자유를 가진다. 공무원의 신분과 정치적 중립성은 법률이 정하는 바에 의하여 보장된다.</p>
+                
+            <p>누구든지 체포 또는 구속을 당한 때에는 즉시 변호인의 조력을 받을 권리를 가진다. 다만, 형사피고인이 스스로 변호인을 구할 수 없을 때에는 법률이 정하는 바에 의하여 국가가 변호인을 붙인다.</p>        
+        </div>
+    </div>
+    
+
+
+
+    </div>
+</body>
+</html>
