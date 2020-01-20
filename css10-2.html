@@ -178,16 +178,29 @@
            width: 96%;
            margin: 0 auto;
            font-size: 12px;
+           color: black;
+       }
+
+       #div04 .header-text {
+           font-size: 2rem;
+           text-align: center;
+           color: black;
+       }
+
+       #div04 .fluid-text {
+           font-size: 1.5rem;
+           color: black;
        }
 
        #div04 .header-text {
            font-size: 2rem;
            text-align: center;
        }
-
-       #div04 .fluid-text {
-           font-size: 1.5rem;
-       }
+       /* 2rem = 32px, 자식 태그 2em=64px, 2rem=32px, 1.5em=48px, 1.5rem=24px */
+       #div04 .fontem {font-size: 2em;}
+       #div04 .font2em {font-size: 2rem;}
+       #div04 .fluid-textem {font-size: 1.5em;}
+       #div04 .fluid-textrem {font-size: 1.5rem;}
          
     </style>
 </head>
@@ -252,8 +265,10 @@
     <div id="div04">
         <div class="wrapper">
             <header class="header-text">
-                <p>가변 그리드 레이아웃</p>
-                <p class="fluid-text">가변 폰트</p>
+                <p class="fontem">가변 그리드 레이아웃</p>
+                <p class="fontrem0">가변 폰트</p>
+                <p class="fluid-textem">em</p>
+                <p class="fluid-textrem">rem</p>
             </header>
         </div>
     </div>
