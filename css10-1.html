@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 10일차 1번 파일</title>
+
+    <style>
+        .prod-list {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .prod-list li {
+            position: relative;
+            /* 기본적으로 li 이기 때문에 각 리스트가 세로로 출력되어야 하지만 float 를 사용하여 왼쪽으로 붙임 */
+            float: left;
+            /* li 내부의 빈공간 삭제 */
+            padding: 0;
+            /* 다음에 출력될 요소와 최소 10px 띄움 */
+            margin: 10px;
+            /* 자손 태그가 자신의 영역 이상 컸을 경우 화면에 출력하지 않음 */
+            overflow: hidden;
+        }
+        .prod-list img {
+            margin: 0;
+            padding: 0;
+            float: left;
+            z-index: 5;
+        }
+
+        .prod-list::after {
+            clear: both;
+            display: table;
+            content: "";
+        }
+
+        .prod-list .caption {
+            position: absolute;
+            top: 200px;
+            width: 300px;
+            height: 200px;
+            padding-top: 20px;
+            background-color: rgba(0, 0, 0, 0, 0.6);
+            opacity: 0;
+            -moz-transition: all 0.2s ease-in-out;
+            -webkit-transition: all 0.2s ease-in-out;
+            -o-transition: all 0.2s ease-in-out;
+            -ms-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+            z-index: 10;
+        }
+
+        .prod-list li:hover .caption {
+            opacity: 1;
+            -moz-transform: translateY(-200px);
+            -webkit-transform: translateY(-200px);
+            -ms-transform: translateY(-200px);
+            -o-transform: translateY(-200px);
+            transform: translateY(-200px);
+        }
+
+        .prod-list .caption h1, .prod-list .caption p {
+            color: white;
+            font-weight: bolder;
+            text-align: center;
+            position: relative;
+            left: 150px;
+            top: 50px;
+            font-size: 2em;
+
+
+        }
+        
+        #div01 .box1 {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            background-color: green;
+            -webkit-transition-duration: 1s;
+            -ms-transition-duration: 1s;
+            -moz-transition-duration: 1s;
+            -o-transition-duration: 1s;
+            transition-duration: 1s;
+            -webkit-transition-property: background-color;
+            -moz-transition-property: background-color;
+            -ms-transition-property: background-color;
+            -o-transition-property: background-color;
+            transition-property: background-color;
+            -webkit-transition-timing-function: ease-in-out;
+            -moz-transition-timing-function: ease-in-out;
+            -o-transition-timing-function: ease-in-out;
+            -ms-transition-timing-function: ease-in-out;
+            transition-timing-function: ease-in-out;
+        }
+
+        #div01 .box1:hover {
+            background-color: yellow;
+        }
+
+        #div02 .img1 {
+            width: 600px;
+            height: 600px;
+            transition: all 2s ease-in-out;
+            /* margin 을 상하는 px 추가, 좌우측은 중앙 정렬 */
+            margin-left: 50px auto; 
+        }
+
+        #div02 .img1:hover {
+            width: 600px;
+            height: 600px;
+            border: 3px solid black;
+            border-radius: 10px;
+            transform: rotate(20deg);
+        }
+
+        /* #div03 .img2 {
+            width: 600px;
+            height: 600px;
+            margin-left: 300px;
+            transition: all 1s;
+        }
+
+        #div03 .img2:hover {
+            width: 600px;
+            height: 600px;
+            -webkit-transform: scale(1.5);
+            -moz-tranform: scale(1.5);
+            -o-transform: scale(1.5);
+            -ms-transform: scale(1.5);
+            transform: scale(1.5);
+            -webkit-transform-origin: left top;
+            -moz-transform-origin: left top;
+            -o-transform-origin: left top;
+            -ms-transform-origin: left top;
+            transform-origin: left top;
+            box-shadow: 5px 5px 3px black;
+        } */
+
+        #div03 .img2 {
+            width: 600px;
+            height: 600px;
+            margin-top: 300px;
+            margin-left: 300px;
+        }
+        #div03 .img2:hover {
+            -webkit-animation-name: photo;
+            -moz-animation-name: photo;
+            -o-animation-name: photo;
+            -ms-animation-name: photo;
+            animation-name: photo;
+            -webkit-animation-duration: 1s;
+            -moz-animation-duration: 1s;
+            -o-animation-duration: 1s;
+            -ms-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-iteration-count: infinite;
+            -moz-animation-iteration-count: infinite;
+            -o-animation-iteration-count: infinite;
+            -ms-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+            -webkit-animation-direction: alternate;
+            -moz-animation-direction: alternate;
+            -o-animation-direction: alternate;
+            -ms-animation-direction: alternate;
+            animation-direction: alternate;
+        }
+
+        @-webkit-keyframes photo {
+            from {
+                width: 600px;
+                height: 600px;
+                margin-left: 300px;
+            }
+            to {
+                width: 600px;
+                height: 600px;
+                margin-left: 300px;
+                transform: scale(1.5);
+                box-shadow: 5px 5px 3px black;
+            }
+        }
+
+        @-moz-keyframes photo {
+            from {
+                width: 600px;
+                height: 600px;
+                margin-left: 300px;
+            }
+            to {
+                width: 600px;
+                height: 600px;
+                margin-left: 300px;
+                transform: scale(1.5);
+                box-shadow: 5px 5px 3px black;
+            }
+        }
+
+        @-ms-keyframes photo {
+            from {
+                width: 600px;
+                height: 600px;
+                margin-left: 300px;
+            }
+            to {
+                width: 600px;
+                height: 600px;
+                margin-left: 300px;
+                transform: scale(1.5);
+                box-shadow: 5px 5px 3px black;
+            }
+        }
+
+        @-o-keyframes photo {
+            from {
+                width: 600px;
+                height: 600px;
+                margin-left: 300px;
+            }
+            to {
+                width: 600px;
+                height: 600px;
+                margin-left: 300px;
+                transform: scale(1.5);
+                box-shadow: 5px 5px 3px black;
+            }
+        }
+
+        @keyframes photo {
+            from {
+                width: 600px;
+                height: 600px;
+                margin-left: 300px;
+            }
+            to {
+                width: 600px;
+                height: 600px;
+                margin-left: 300px;
+                transform: scale(1.5);
+                box-shadow: 5px 5px 3px black;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <h1>신상품 목록</h1>
+    <div id="container">
+        <ul class="prod-list">
+            <li>
+                <img src="./img/img_5terre.jpg" alt="">
+                <div class="caption">
+                    <h1>상품 1</h1>
+                    <p>상품 1 : 설명 텍스트</p>
+                    <p>가격 : 12,345원</p>
+                </div>
+            </li>
+            <li>
+                <img src="./img/img_forest.jpg" alt="">
+                <div class="caption">
+                    <h1>상품 2</h1>
+                    <p>상품 2 : 설명 텍스트</p>
+                    <p>가격 : 12,345원</p>
+                </div>               
+            </li>
+            <li>
+                <img src="./img/img_mountains.jpg" alt="">
+                <div class="caption">
+                    <h1>상품 3</h1>
+                    <p>상품 3 : 설명 텍스트</p>
+                    <p>가격 : 12,345원</p>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+
+    <br><br><hr><br>
+
+    <div id="div01">
+        <div class="box1"></div>
+    </div>
+
+    
+    <br><br><hr><br>
+    
+    <div id="div02">
+        <div>
+            <img src="./img/img_5terre.jpg" alt="" class="img1">
+        </div>
+    </div> 
+    
+    <br><br><hr><br>
+
+    <div id="div03">
+        <div>
+            <img src="./pic/001/001.jpg" alt="" class="img2">
+        </div>        
+    </div>
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
